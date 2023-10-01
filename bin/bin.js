@@ -1,44 +1,4 @@
 #!/usr/bin/env node
-const fs = require("fs")
+const main = require("./validator")
 
-const logColor = (color, text) => {
-    let colorCode =""
-    if (color==="green"){colorCode="\x1b[32m"}
-    if (color==="red"){colorCode="\x1b[31m"}
-    return `${colorCode}${text}\x1b[0m`
-}
-
-const main = () => {
-    let errors = []
-
-    if (!process.argv[2]){
-        console.error("Provide a file name")
-        return
-    }
-    try {
-        const file = fs.readFileSync(process.argv[2]).toString()
-        const lines = file.split("\n")
-        for (let i  = 0; i<lines.length; i++){
-            try {
-                JSON.parse(lines[i])
-            }catch (error){
-                if (error instanceof SyntaxError) {
-                    errors.push(`Line ${i+1}: ${error.message}`)
-                } else {
-                    throw error
-                }
-            }
-        }
-        const nerrors = errors.length
-        let color = nerrors===0?'green':'red'
-        console.log(logColor(color,`Your JSON parsed with ${nerrors} error${nerrors===1?'':'s'}${nerrors===0?'':':'}`))
-        errors.forEach((error) =>  {
-            console.log(error)
-        })
-    }
-    catch (error){
-        console.error(error.message)
-    }
-}
-
-main ()
+main (process.argv[2])

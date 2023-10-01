@@ -9,5 +9,11 @@
   ],
   "author": "Leo Alho",
   "license": "ISC",
-  "bin": "./bin/bin.js"
+  "bin": "./bin/bin.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
