@@ -1,6 +1,6 @@
 {
   "name": "validate-jsonl",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A simple JSONL (JSON Lines) file validator",
   "keywords": [
     "JSONl",
@@ -9,6 +9,7 @@
   ],
   "author": "Leo Alho",
   "license": "ISC",
+  "homepage": "https://github.com/leoalho/validate-jsonl#readme",
   "main": "./src/validator",
   "bin": "./bin/bin.js",
   "scripts": {
