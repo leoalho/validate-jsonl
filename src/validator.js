@@ -7,7 +7,7 @@ const logColor = (color, text) => {
     return `${colorCode}${text}\x1b[0m`
 }
 
-const validateJSONl = (fileName) => {
+const validateJSONL = (fileName) => {
     let errors = []
 
     if (!fileName){
@@ -30,7 +30,7 @@ const validateJSONl = (fileName) => {
         }
         const nerrors = errors.length
         let color = nerrors===0?'green':'red'
-        console.log(logColor(color,`Your JSON parsed with ${nerrors} error${nerrors===1?'':'s'}${nerrors===0?'':':'}`))
+        console.log(logColor(color,`Your JSONL parsed with ${nerrors} error${nerrors===1?'':'s'}${nerrors===0?'':':'}`))
         errors.forEach((error) =>  {
             console.log(error)
         })
@@ -40,4 +40,4 @@ const validateJSONl = (fileName) => {
     }
 }
 
-module.exports = validateJSONl
+module.exports = {validateJSONL}

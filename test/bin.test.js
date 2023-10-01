@@ -20,7 +20,7 @@ describe("binary", () => {
         validate("./test/correct.jsonl")
         expect(logSpy).toHaveBeenCalled();
         expect(logSpy).toHaveBeenCalledTimes(1);
-        expect(logSpy).toHaveBeenCalledWith("\x1b[32mYour JSON parsed with 0 errors\x1b[0m");
+        expect(logSpy).toHaveBeenCalledWith("\x1b[32mYour JSONL parsed with 0 errors\x1b[0m");
         logSpy.mockRestore();
     });
     it("Empty line at end gives error", () =>{
@@ -28,7 +28,7 @@ describe("binary", () => {
         validate("./test/endline.jsonl")
         expect(logSpy).toHaveBeenCalled();
         expect(logSpy).toHaveBeenCalledTimes(2);
-        expect(logSpy).toHaveBeenCalledWith("\x1b[31mYour JSON parsed with 1 error:\x1b[0m");
+        expect(logSpy).toHaveBeenCalledWith("\x1b[31mYour JSONL parsed with 1 error:\x1b[0m");
         logSpy.mockRestore();
     });
 })
