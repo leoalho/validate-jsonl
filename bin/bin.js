@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-const main = require("../src/validator")
+const {validateJSONL} = require("../src/validator")
 
-main (process.argv[2])
+validateJSONL(process.argv[2])
