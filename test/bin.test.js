@@ -1,4 +1,4 @@
-const validate = require("../bin/validator")
+const validate = require("../src/validator")
 
 describe("binary", () => {
     it("Does not work with undefied file name", () => {

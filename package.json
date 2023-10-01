@@ -9,6 +9,7 @@
   ],
   "author": "Leo Alho",
   "license": "ISC",
+  "main": "./src/validator",
   "bin": "./bin/bin.js",
   "scripts": {
     "test": "jest"
