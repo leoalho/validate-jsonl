@@ -13,13 +13,13 @@ Run the validator with the command `npx validate-jsonl <filename>` or `yarn vali
 
 ### Running in code
 #### ES
-```
-import {validateJSONL}from "validate-jsonl"
-validateJSON("filepath")
+```js
+import {validateJSONL} from "validate-jsonl"
+validateJSONL("filepath")
 ```
 The library comes with type definitions, so it also works with typescript
 #### CommonJS
-```
+```js
 const {validateJSONL} = require("validate-jsonl")
 validateJSONL("filepath")
 ```
